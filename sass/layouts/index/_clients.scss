@@ -3,7 +3,7 @@
     padding-bottom: 94px;
 }
 
-.our-clients {
+.clients__our {
     font-size: 36px;
     line-height: calc(42 / 36);
     text-align: center;
@@ -11,16 +11,16 @@
     color: #212121;
 }
 
-.clients-list {
+.clients__list {
     display: flex;
     margin-top: 50px;
 }
 
-.clients-list-ico:not(:last-child) {
+.clients__list-ico:not(:last-child) {
     margin-right: 30px;
 }
 
-.client-icon {
+.client__icon {
     display: block;
     fill: #afb1b8;
     border: 1px #afb1b8 solid;
