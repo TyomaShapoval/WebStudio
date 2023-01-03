@@ -1,6 +1,9 @@
 .we-do {
     background-color: #ffffff;
     padding-bottom: 94px;
+    @media screen and(max-width: 1200px) {
+        display: none;
+    }
 }
 
 .we-do__div > h2 {
