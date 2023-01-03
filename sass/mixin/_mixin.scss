@@ -1,0 +1,17 @@
+@mixin tell {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin comp {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+}

@@ -22,7 +22,16 @@ ul {
 }
 
 .container {
-    width: 1200px;
+    width: 100%;
     padding: 0px 15px;
     margin: 0 auto;
+    @include tell {
+        width: 480px;
+    }
+    @include tab {
+        width: 768px;
+    }
+    @include comp {
+        width: 1200px;
+    }
 }

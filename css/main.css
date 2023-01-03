@@ -31,17 +31,32 @@ ul {
 }
 
 .container {
-  width: 1200px;
+  width: 100%;
   padding: 0px 15px;
   margin: 0 auto;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
 }
 
 .logo {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
-  font-size: 26px;
-  line-height: 1.1923076923;
+  font-size: 24px;
+  line-height: 1.1666666667;
   letter-spacing: 0.03em;
   color: var(--general-color);
   text-decoration: none;
@@ -52,6 +67,12 @@ ul {
 }
 .logo--white {
   color: #ffffff;
+}
+@media screen and (min-width: 1200px) {
+  .logo {
+    font-size: 26px;
+    line-height: 1.1923076923;
+  }
 }
 
 .button {
@@ -118,8 +139,32 @@ ul {
   border: 1px solid #ececec;
 }
 
-.navigation {
-  margin-left: 91px;
+.open-menu {
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.open-menu:hover, .open-menu:focus {
+  fill: var(--general-color);
+}
+@media screen and (min-width: 768px) {
+  .open-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .navigation {
+    margin-left: 88px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navigation {
+    margin-left: 92px;
+  }
 }
 
 .navigation__link {
@@ -136,13 +181,28 @@ ul {
   color: var(--general-color);
 }
 
-.navigation__unordered,
-.header__nav,
-.header__flex,
-.contact {
+.header__flex {
   display: flex;
-  flex-direction: row;
   align-items: center;
+}
+
+.navigation__unordered,
+.header__nav {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navigation__unordered,
+.header__nav {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navigation__unordered,
+.header__nav {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .navigation__list:not(:last-child) {
@@ -164,33 +224,78 @@ ul {
   transform: translateY(-50%);
 }
 
-.header__contact {
-  margin-left: 310px;
+@media screen and (min-width: 768px) {
+  .header__contact {
+    margin-left: 90px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__contact {
+    margin-left: 310px;
+  }
+}
+
+.contact {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
 }
 
 .contact__link {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.1428571429;
-  letter-spacing: 0.02em;
   color: #757575;
   fill: #757575;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.1666666667;
+  letter-spacing: 0.02em;
   display: flex;
   align-items: center;
-  justify-content: center;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact__link:hover, .contact__link:focus {
   color: var(--general-color);
   fill: var(--general-color);
 }
-
-.contact__list:not(:last-child) {
-  margin-right: 30px;
+@media screen and (min-width: 1200px) {
+  .contact__link {
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.1428571429;
+  }
 }
 
-.contact__icon {
-  margin-right: 10px;
+@media screen and (min-width: 768px) {
+  .contact__list:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__list:not(:last-child) {
+    margin-right: 30px;
+    margin-bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact__icon {
+    margin-right: 8px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__icon {
+    margin-right: 10px;
+  }
 }
 
 .hero {
@@ -737,6 +842,125 @@ ul {
 }
 .modal__button:active {
   scale: 0.9;
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 38px 40px;
+  background: #ffffff;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu__close {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu__close:hover {
+  fill: #2196f3;
+}
+.mobile-menu__close:active {
+  scale: 0.75;
+}
+
+.mobile-menu__list {
+  display: block;
+}
+.mobile-menu__list:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-menu__nav {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  letter-spacing: 0.02em;
+  color: #212121;
+  display: block;
+}
+.mobile-menu__nav:hover {
+  color: var(--general-color);
+}
+.mobile-menu__nav:focus {
+  color: var(--general-color);
+}
+
+.mobile-menu__unordered {
+  margin-top: 302px;
+  margin-bottom: 64px;
+}
+
+.mobile-menu__tel {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.1764705882;
+  letter-spacing: 0.02em;
+  color: #2196F3;
+}
+
+.mobile-menu__list {
+  display: block;
+}
+.mobile-menu__list:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-menu__mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.1666666667;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+
+.soc-list {
+  display: flex;
+  justify-content: left;
+}
+
+.soc-list__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.3333333333;
+  letter-spacing: 0.02em;
+  color: #2196F3;
+}
+@media screen and (max-width: 450px) {
+  .soc-list__link {
+    font-size: 3.8vw;
+  }
+}
+
+.soc-list__li {
+  display: block;
+  position: relative;
+}
+.soc-list__li:not(:first-child) {
+  margin-left: 10px;
+}
+.soc-list__li:not(:last-child) {
+  margin-right: 10px;
+}
+.soc-list__li:not(:last-child)::after {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  display: block;
+  content: "";
+  height: 22px;
+  width: 1px;
+  background-color: rgba(33, 33, 33, 0.2);
 }
 
 .nav-job {
