@@ -1,15 +1,24 @@
 .team {
     background-color: #f5f4fa;
-    padding-bottom: 94px;
-    padding-top: 94px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    @include comp {
+        padding-bottom: 94px;
+        padding-top: 94px;
+    }
    & h2 {
             font-weight: 700;
-            font-size: 36px;
-            line-height: calc(42 / 36);
+            font-size: 28px;
+            line-height: calc(33 / 28);
             text-align: center;
             letter-spacing: 0.03em;
             color: #212121;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
+            @include comp {
+                font-size: 36px;
+                line-height: calc(42 / 36);
+                margin-bottom: 50px;
+            }
         }
    & h3 {
             font-weight: 500;
@@ -30,10 +39,15 @@
 }
 }
 .team__list {
-    display: flex;
-    & > li:not(:last-child) {
+    @include tab {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    @include comp {
+        &>li:not(:last-child) {
             margin-right: 30px;
-        }
+    }
+    }
 }
 
 .team__image {
@@ -41,7 +55,40 @@
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
+    @media screen and (max-width: 767.33px) {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1199.33px) {
+            &:nth-child(2n+1) {
+                margin-right: 30px;
+            }
+            &:nth-child(-n+2) {
+                margin-bottom: 30px;
+            }
+        }
+    @include comp {
+        padding-bottom: 30px;
+    }
+    & img {
+        width: 450px;
+        height: 460px;
+        object-fit: cover;
+        @media screen and (max-width: 480px) {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        @include tab {
+            width: 354px;
+            height: 374px;
+        }
+        @include comp {
+     width: 270px;
+     height: 260px;
+    }
+  }
 }
 
 

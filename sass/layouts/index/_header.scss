@@ -58,7 +58,7 @@
 .navigation__list:not(:last-child) {
     margin-right: 50px;
 }
-.navigation__list:first-child {
+.navigation__active {
     position: relative;
     width: 48px;
 
