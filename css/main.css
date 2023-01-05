@@ -138,8 +138,15 @@ ul {
 .header {
   border: 1px solid #ececec;
 }
+@media screen and (max-width: 767.33px) {
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
 
 .open-menu {
+  height: 40px;
   margin-left: auto;
   padding: 0;
   border: none;
@@ -184,6 +191,11 @@ ul {
 .header__flex {
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 767.33px) {
+  .header__flex {
+    justify-content: center;
+  }
 }
 
 .navigation__unordered,
@@ -419,6 +431,9 @@ ul {
 }
 
 @media screen and (max-width: 767.33px) {
+  .work__list > h3 {
+    text-align: center;
+  }
   .work__list:not(:last-child) {
     margin-bottom: 30px;
   }
